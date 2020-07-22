@@ -3,10 +3,8 @@
 </script>
 
 <svelte:head>
-  <title>Sapper project template</title>
+  <title>Home | tosaka.dev</title>
 </svelte:head>
-
-<h1>Great success!</h1>
 
 <figure>
   <img alt="Success Kid" src="successkid.jpg" />
