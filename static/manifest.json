@@ -1,12 +1,11 @@
 {
 	"background_color": "#ffffff",
 	"theme_color": "#333333",
-	"name": "TODO",
-	"short_name": "TODO",
+	"name": "tosaka.dev",
+	"short_name": "tosaka.dev",
 	"display": "minimal-ui",
 	"start_url": "/",
-	"icons": [
-		{
+	"icons": [{
 			"src": "logo-192.png",
 			"sizes": "192x192",
 			"type": "image/png"
