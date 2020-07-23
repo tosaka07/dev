@@ -3,8 +3,6 @@
 	"include": ["src/**/*", "src/node_modules"],
 	"exclude": ["node_modules/*", "__sapper__/*", "public/*", "src/service-worker.js"],
 	"compilerOptions": {
-		"target": "ESNEXT",
-		"module": "ESNEXT",
 		"allowJs": true,
 		"checkJs": false,
 
@@ -17,7 +15,8 @@
 			"@components/*": ["./src/components/*"],
 			"@includes/*": ["./src/includes/*"],
 			"@styles/*": ["./src/styles/*"],
-			"@routes/*": ["./src/routes/*"]
+			"@routes/*": ["./src/routes/*"],
+			"@interfaces/*": ["./src/interfaces/*"]
 		},
 		"typeRoots": [
 			"typings"
@@ -27,7 +26,7 @@
 			// "@sapper",
 			"node"
 		],
-		"allowSyntheticDefaultImports": true,
+		// "allowSyntheticDefaultImports": true,
 		"esModuleInterop": true
 	}
 }

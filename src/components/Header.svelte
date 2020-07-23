@@ -2,10 +2,10 @@
   export let segment
 </script>
 
-<header class="sticky top-0 bg-white bg-opacity-75 backdrop">
+<header class="sticky top-0 bg-white bg-opacity-75 backdrop z-50">
   <div class="container flex items-center justify-between mx-auto h-54px">
-    <a href="/">
-      <svg class="w-10 cursor-pointer" viewBox="0 0 512 512">
+    <a class="w-8" href="/">
+      <svg class="cursor-pointer" viewBox="0 0 512 512">
         <g>
           <g>
             <path

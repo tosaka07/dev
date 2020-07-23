@@ -1,34 +1,54 @@
-<script context="module">
-	export function preload({ params, query }) {
-		return this.fetch(`blog.json`).then(r => r.json()).then(posts => {
-			return { posts };
-		});
-	}
+<script context="module" lang="ts">
+  export function preload({ params, query }) {
+    return this.fetch(`blog.json`)
+      .then((r) => r.json())
+      .then((list) => {
+        return { list }
+      })
+  }
 </script>
 
-<script>
-	export let posts;
+<script lang="ts">
+  export let list
 </script>
-
-<style>
-	ul {
-		margin: 0 0 1em 0;
-		line-height: 1.5;
-	}
-</style>
 
 <svelte:head>
-	<title>Blog</title>
+  <title>Blog | tosaka.dev</title>
 </svelte:head>
 
-<h1>Recent posts</h1>
-
-<ul>
-	{#each posts as post}
-		<!-- we're using the non-standard `rel=prefetch` attribute to
-				tell Sapper to load the data for the page as soon as
-				the user hovers over the link or taps it, instead of
-				waiting for the 'click' event -->
-		<li><a rel='prefetch' href='blog/{post.slug}'>{post.title}</a></li>
-	{/each}
-</ul>
+<div class="container py-10">
+  {#each list as postsByMonth}
+    <div>
+      <h2 class="mb-6 text-2xl font-bold">{postsByMonth.key}</h2>
+      {#each postsByMonth.posts as post}
+        <a
+          rel="prefetch"
+          class="flex flex-col sm:flex-row mb-10"
+          href="/blog/{post.slug}">
+          {#if post.image != undefined}
+            <div class="sm:mr-8">
+              <figure
+                class="aspect-ratio-16/9 sm:w-200px bg-gray-300 border
+                rounded-sm bg-cover bg-no-repeat bg-center"
+                style="background-image: url('{post.image}');" />
+            </div>
+          {/if}
+          <div>
+            <div>
+              <span class="text-xs text-gray-600">{post.printDate}</span>
+              {#each post.tags as tag}
+                <span class="text-xs text-purple-700 font-bold pl-1">
+                  {tag}
+                </span>
+              {/each}
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">{post.title}</h3>
+              <p class="text-base">{post.excerpt}</p>
+            </div>
+          </div>
+        </a>
+      {/each}
+    </div>
+  {/each}
+</div>

@@ -1,54 +1,51 @@
 <script lang="ts">
-  const test = 'えぐうう'
+  // import { Post } from '../interfaces/Post'
+  interface Post {
+    title: string
+  }
+
+  let posts: Post[] = [
+    { title: '' },
+    { title: '' },
+    { title: '' },
+    { title: '' },
+    { title: '' },
+    { title: '' },
+  ]
 </script>
 
 <svelte:head>
   <title>Home | tosaka.dev</title>
 </svelte:head>
 
-<figure>
-  <img alt="Success Kid" src="successkid.jpg" />
-  <figcaption>Have fun with {test}!</figcaption>
-</figure>
-
-<p>
-  <strong>
-    Try editing this file (src/routes/index.svelte) to test live reloading.
-  </strong>
-</p>
-
-<style>
-  h1,
-  figure,
-  p {
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  h1 {
-    font-size: 2.8em;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 0 0 0.5em 0;
-  }
-
-  figure {
-    margin: 0 0 1em 0;
-  }
-
-  img {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 0 1em 0;
-  }
-
-  p {
-    margin: 1em auto;
-  }
-
-  @media (min-width: 480px) {
-    h1 {
-      font-size: 4em;
-    }
-  }
-</style>
+<div class="container py-10">
+  <div>
+    <h2 class="mb-6 text-2xl font-bold">2020年4月</h2>
+    {#each posts as post}
+      <a class="flex flex-col sm:flex-row mb-10" href="/blog/how-to-use-sapper">
+        <div class="overflow-hidden sm:mr-8">
+          <div
+            class="aspect-ratio-16/9 sm:w-200px bg-gray-300 border rounded-sm
+            bg-cover bg-no-repeat bg-center"
+            style="background-image: url('successkid.jpg');">
+            <figure
+              class="overflow-hidden bg-cover bg-no-repeat bg-center"
+              style="background-image: url('successkid.jpg');" />
+          </div>
+        </div>
+        <div>
+          <div>
+            <span class="text-xs text-gray-600">2020/10/20</span>
+            <span class="text-xs text-purple-700 font-bold pl-1">
+              プレスリリース
+            </span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold">タイトル</h3>
+            <p class="text-base">説明</p>
+          </div>
+        </div>
+      </a>
+    {/each}
+  </div>
+</div>

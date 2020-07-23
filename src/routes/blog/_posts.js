@@ -7,8 +7,7 @@
 // we don't want to create an `/blog/posts` route — the leading
 // underscore tells Sapper not to do that.
 
-const posts = [
-	{
+const posts = [{
 		title: 'What is Sapper?',
 		slug: 'what-is-sapper',
 		html: `
@@ -81,6 +80,49 @@ const posts = [
 		slug: 'how-can-i-get-involved',
 		html: `
 			<p>We're so glad you asked! Come on over to the <a href='https://github.com/sveltejs/svelte'>Svelte</a> and <a href='https://github.com/sveltejs/sapper'>Sapper</a> repos, and join us in the <a href='https://svelte.dev/chat'>Discord chatroom</a>. Everyone is welcome, especially you!</p>
+		`
+	},
+
+	{
+		title: 'How can I get involved?',
+		slug: 'how-can-i-get-involved',
+		html: `
+		<p><b>This page</b> is an adapted version of <a target="_blank" rel="nofollow" href="https://github.com/fullpipe/markdown-test-page">markdown-test-page</a>. It should give you an idea of how different elements are styled on this template.</p>
+		<h2 id="a-nametopa-table-of-contents"><a name="top"></a> Table of Contents</h2>
+		<ul>
+			<li><a onclick="document.location.hash='Headings';" href="javascript:;">Headings</a></li>
+			<li><a onclick="document.location.hash='Paragraphs';" href="javascript:;">Paragraphs</a></li>
+			<li><a onclick="document.location.hash='Blockquotes';" href="javascript:;">Blockquotes</a></li>
+			<li><a onclick="document.location.hash='Lists';" href="javascript:;">Lists</a></li>
+			<li><a onclick="document.location.hash='Horizontal';" href="javascript:;">Horizontal rule</a></li>
+			<li><a onclick="document.location.hash='Table';" href="javascript:;">Table</a></li>
+			<li><a onclick="document.location.hash='Code';" href="javascript:;">Code</a></li>
+			<li><a onclick="document.location.hash='Inline';" href="javascript:;">Inline elements</a></li>
+		</ul>
+		<hr>
+		<h1 id="a-nameheadingsaheadings"><a name="Headings"></a>Headings</h1>
+		<h2 id="heading-two">Heading two</h2>
+		<h3 id="heading-three">Heading three</h3>
+		<h4 id="heading-four">Heading four</h4>
+		<h5 id="heading-five">Heading five</h5>
+		<h6 id="heading-six">Heading six</h6>
+		<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+			<span class="token keyword">let</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+			<span class="token keyword">function</span> <span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				count <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+			</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name"><span class="token namespace">on:</span>click</span><span class="token attr-value"><span class="token punctuation">=</span>{handleClick}</span><span class="token punctuation">&gt;</span></span>
+					Clicked {count} {count === 1 ? 'time' : 'times'}
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span></code>
+		</pre>
+		<blockquote>
+			<p>Deserunt excepteur adipisicing culpa pariatur cillum laboris ullamco nisi fugiat cillum officia. In cupidatat nulla aliquip tempor ad Lorem Lorem quis voluptate officia consectetur pariatur ex in est duis. Mollit id esse est elit exercitation voluptate nostrud nisi laborum magna dolore dolore tempor in est consectetur.</p>
+		</blockquote>
+		<p><img src="https://placekitten.com/480/400" alt="Not so big"></p>
+		<iframe width="100%" height="400" src="https://www.youtube.com/embed/PCp2iXA1uLE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 		`
 	}
 ];

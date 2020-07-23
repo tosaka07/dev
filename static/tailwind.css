@@ -5,3 +5,80 @@
 .backdrop {
   backdrop-filter: saturate(180%) blur(20px);
 }
+
+.separator {
+  @apply inline-block w-px mx-2 bg-gray-600
+}
+
+.content h1 {
+  @apply text-4xl font-bold mt-16
+}
+
+.content h2 {
+  @apply text-3xl font-bold mt-16
+}
+
+.content h3 {
+  @apply text-2xl font-bold mt-16
+}
+
+.content h4 {
+  @apply text-xl font-bold mt-16
+}
+
+.content h5 {
+  @apply text-lg font-bold mt-16
+}
+
+.content h6 {
+  @apply text-base font-bold mt-16
+}
+
+.content p {
+  @apply text-base leading-4 my-12
+}
+
+.content p a {
+  @apply underline
+}
+
+.content p b {
+  @apply font-bold
+}
+
+.content p img {
+  @apply mx-auto
+}
+
+.content ul,
+.content ol {
+  @apply my-12
+}
+
+.content li {
+  @apply text-base leading-4 my-8 list-inside
+}
+
+.content ul>li {
+  @apply list-disc
+}
+
+.content ol>li {
+  @apply list-decimal
+}
+
+.content pre {
+  @apply text-base my-12 px-4 py-4 overflow-scroll rounded bg-gray-200
+}
+
+.content code {
+  @apply text-sm px-2 py-1 rounded bg-gray-200
+}
+
+.content hr {
+  @apply my-12
+}
+
+.content blockquote p {
+  @apply text-2xl leading-tight mt-16 px-4 font-bold relative text-center
+}
