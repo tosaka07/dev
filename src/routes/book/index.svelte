@@ -17,7 +17,10 @@
 </svelte:head>
 
 <div class="container py-10">
-  <h1 class="mb-8 text-4xl font-bold">Book</h1>
+  <h1 class="text-4xl font-bold">Book</h1>
+  <p class="mb-8 text-lg text-gray-600">
+    読んだ本を、感想とあわせて残してます。
+  </p>
   <ul
     class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-10">
     {#each list as pair}

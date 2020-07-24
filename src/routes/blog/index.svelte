@@ -17,7 +17,8 @@
 </svelte:head>
 
 <div class="container py-10">
-  <h1 class="mb-8 text-4xl font-bold">Blog</h1>
+  <h1 class="text-4xl font-bold">Blog</h1>
+  <p class="mb-8 text-lg text-gray-600">プログラミングや雑記を残してます。</p>
   {#each list as postsByMonth}
     <div>
       <h2 class="mb-6 text-2xl font-bold">{postsByMonth.key}</h2>
