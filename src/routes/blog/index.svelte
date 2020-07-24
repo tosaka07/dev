@@ -17,6 +17,7 @@
 </svelte:head>
 
 <div class="container py-10">
+  <h1 class="mb-8 text-4xl font-bold">Blog</h1>
   {#each list as postsByMonth}
     <div>
       <h2 class="mb-6 text-2xl font-bold">{postsByMonth.key}</h2>

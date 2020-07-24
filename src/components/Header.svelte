@@ -44,6 +44,9 @@
           <a href="/about">About</a>
         </li>
         <li class="mr-10 font-bold last:mr-0">
+          <a href="/book">Book</a>
+        </li>
+        <li class="mr-10 font-bold last:mr-0">
           <a href="/blog">Blog</a>
         </li>
       </ul>

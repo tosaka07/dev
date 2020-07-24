@@ -6,6 +6,10 @@
   backdrop-filter: saturate(180%) blur(20px);
 }
 
+.backdrop-sm {
+  backdrop-filter: saturate(140%) blur(20px) brightness(60%);
+}
+
 .separator {
   @apply inline-block w-px mx-2 bg-gray-600
 }
@@ -15,7 +19,7 @@
 }
 
 .content h2 {
-  @apply text-3xl font-bold mt-16
+  @apply text-3xl font-bold mt-16 pb-2 border-b-2 border-solid
 }
 
 .content h3 {
