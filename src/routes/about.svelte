@@ -1,7 +1,10 @@
 <svelte:head>
-	<title>About</title>
+  <title>About | tosaka.dev</title>
 </svelte:head>
 
-<h1>About this site</h1>
-
-<p>This is the 'about' page. There's not much here.</p>
+<div class="article-container content">
+  <p class="text">
+    GitHub:
+    <a href="https://github.com/tosaka07">tosaka07</a>
+  </p>
+</div>
