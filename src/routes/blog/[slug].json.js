@@ -2,14 +2,11 @@ import postsByMonthList from '../blog/_posts2';
 
 const lookup = new Map();
 postsByMonthList
-	.flatMap(arg => arg.posts)
 	.forEach(post => {
 		lookup.set(post.slug, JSON.stringify(post));
 	});
 
 export function get(req, res, next) {
-	// the `slug` parameter is available because
-	// this file is called [slug].json.js
 	const {
 		slug
 	} = req.params;

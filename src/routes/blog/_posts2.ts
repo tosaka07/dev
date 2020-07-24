@@ -68,23 +68,4 @@ posts.sort((a, b) => {
   return 0
 })
 
-interface PostsByMonth {
-  key: string
-  posts: any[]
-}
-
-let postsByMonthList: PostsByMonth[] = []
-
-posts.forEach(post => {
-  let key = formatDate(new Date(post.date), 'yyyy-MM')
-  post.html = post.html.replace(/^\t{3}/gm, '')
-  const postsByMonth = postsByMonthList.filter(arg => { arg.key == key})[0]
-
-  if (postsByMonth == undefined) {
-    postsByMonthList.push({ key: key, posts: [post] })
-  } else {
-    postsByMonth.posts.push(post)
-  }
-})
-
-export default postsByMonthList
+export default posts
