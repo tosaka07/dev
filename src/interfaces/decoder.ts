@@ -14,7 +14,7 @@ export const bookDecoder: Decoder<Book> = {
       readAt: new Date(data.fields.readAt),
       thought: data.fields.thought,
       rating: data.fields.rating,
-      tags: data.fields.tags.map(tagDecoder.from)
+      tags: data.fields.tags?.map(tagDecoder.from) ?? []
     }
   }
 }
