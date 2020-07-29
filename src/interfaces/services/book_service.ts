@@ -13,7 +13,6 @@ export const fetchBooks = async (limit?: number): Promise<Book[]> => {
   const limitObj = (limit != null) ? { limit: limit! } : {}
   const params = { ...getEntriesParametor(ContentType.Book), ...limitObj }
   const response = await client.getEntries(params)
-  console.log(response.items)
   return response.items.map(bookDecoder.from)
 }
 
