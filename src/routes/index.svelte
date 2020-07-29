@@ -3,13 +3,13 @@
     return this.fetch(`index.json`)
       .then((r) => r.json())
       .then((obj) => {
-        return { obj }
-      })
+        return { obj };
+      });
   }
 </script>
 
 <script lang="ts">
-  export let obj
+  export let obj;
 </script>
 
 <svelte:head>
@@ -25,15 +25,14 @@
   <ul class="flex overflow-scroll mb-16">
     {#each obj.books as pair}
       <li>
-        <a
-          class="h-full w-40 md:w-48 mr-4 flex flex-col flex-end justify-end"
-          href="/book/{pair.post.isbn}">
+        <a class="h-full w-40 md:w-48 mr-4 flex flex-col flex-end justify-end" href="/book/{pair.post.slug}">
           <img
             class="rounded-sm block w-full mb-4 shadow-xl"
-            alt={pair.api.summary.title}
-            src={pair.api.summary.cover || 'noimage.jpg'} />
+            alt="{pair.api.summary.title}"
+            src="{pair.api.summary.cover || 'noimage.jpg'}"
+          />
           <p class="text-base font-bold truncate">{pair.api.summary.title}</p>
-          <p class="text-xs text-gray-600">{pair.post.formattedReadDate}</p>
+          <p class="text-xs text-gray-600">{pair.post.localizedReadAt}</p>
         </a>
       </li>
     {/each}
@@ -41,21 +40,18 @@
 
   <div class="flex items-baseline justify-between">
     <h2 class="text-4xl mb-8 font-bold">Blog</h2>
-    <a class="text-lg font-bold text-gray-600" href="/blog">See all ></a>
+    <a class="text-lg font-bold text-gray-600" href="/blog">See all &gt;</a>
   </div>
 
   <div class="mb-16">
     {#each obj.blogs as post}
-      <a
-        rel="prefetch"
-        class="flex flex-col sm:flex-row mb-10"
-        href="/blog/{post.slug}">
+      <a rel="prefetch" class="flex flex-col sm:flex-row mb-10" href="/blog/{post.slug}">
         {#if post.image != undefined}
           <div class="sm:mr-8">
             <figure
-              class="aspect-ratio-16/9 sm:w-200px bg-gray-300 border rounded-sm
-              bg-cover bg-no-repeat bg-center"
-              style="background-image: url('{post.image}');" />
+              class="aspect-ratio-16/9 sm:w-200px bg-gray-300 border rounded-sm bg-cover bg-no-repeat bg-center"
+              style="background-image: url('{post.image}');"
+            ></figure>
           </div>
         {/if}
         <div>

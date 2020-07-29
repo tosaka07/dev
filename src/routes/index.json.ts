@@ -1,6 +1,5 @@
-// import posts from './_posts.js';
+import { fetchBooks, fetchOpenBD } from '../interfaces/services/book_service'
 import postsByMonthList from './blog/_posts2';
-import posts from './book/_posts';
 import Global = NodeJS.Global;
 
 // Fetch 使うため
@@ -16,16 +15,18 @@ interface Pair {
 }
 
 export async function get(req, res, next) {
-  // 本
-  const fetchOpenBD = async (isbn: string) => {
-    const response = await fetch(`https://api.openbd.jp/v1/get?isbn=${isbn}`)
-    return await response.json()
-  }
-  const promises = posts.slice(0, 10)
+  const books = await fetchBooks(10)
+  const promises = books
     .map(post => {
-      return fetchOpenBD(post.isbn)
-        .then(json => { return { "post": post, "api": json[0] }  })
+      return fetchOpenBD(`${post.isbn}`)
+        .then(json => { 
+          return {
+            post: { ...post, localizedReadAt: post.readAt.toLocaleDateString() },
+            api: json[0]
+          }  
+        })
     })
+    
   const pairs = await Promise.all(promises)
 
   res.writeHead(200, {
